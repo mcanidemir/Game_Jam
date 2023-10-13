@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
+    public GameObject verypast;
+    public GameObject past;
+    public GameObject future;
 
     // Start is called before the first frame update
     void Start()
@@ -16,15 +19,21 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SceneManager.LoadScene(0);
+            verypast.SetActive(true);
+            past.SetActive(false);
+            future.SetActive(false);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SceneManager.LoadScene(1);
+            past.SetActive(true);
+            verypast.SetActive(false);
+            future.SetActive(false);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            SceneManager.LoadScene(2);
+            past.SetActive(false);
+            verypast.SetActive(false);
+            future.SetActive(true);
         }
     }
 
