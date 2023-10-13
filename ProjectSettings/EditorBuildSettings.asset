@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CurrentTime.unity
     guid: 0cd8fcfeeebbe6e42a50ecb72473b768
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PastTime.unity
     guid: 8faebd58ff89bd543b8905fa76a268c5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VeryPastTime.unity
     guid: 1dcdc1fd12922b9489a0d63a8bcdb6f1
   m_configObjects: {}

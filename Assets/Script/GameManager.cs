@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public GameObject verypastfloor;
     public GameObject pastfloor;
     public GameObject futurefloor;
+    public GameObject Menu;
+    private int MenuVisible = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        #region world1
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             verypast.SetActive(true);
@@ -29,6 +32,8 @@ public class GameManager : MonoBehaviour
             pastfloor.SetActive(false);
             futurefloor.SetActive(false);
         }
+        #endregion
+        #region world2
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             past.SetActive(true);
@@ -38,6 +43,8 @@ public class GameManager : MonoBehaviour
             pastfloor.SetActive(true);
             futurefloor.SetActive(false);
         }
+        #endregion
+        #region world3
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             past.SetActive(false);
@@ -47,6 +54,35 @@ public class GameManager : MonoBehaviour
             pastfloor.SetActive(false);
             futurefloor.SetActive(true);
         }
+        #endregion
+        ESCcount();
+
+        if (MenuVisible % 2 == 0)
+        {
+            Menu.SetActive(false);
+        }
+        else
+        {
+            Menu.SetActive(true);
+        }
+       
+           
+    }
+    public void ESCcount()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            MenuVisible += 1;
+        }
+    }
+    public void Resume()
+    {
+        Menu.SetActive(false);
+        MenuVisible += 1;
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene("CurrentTime");
     }
 
 }
