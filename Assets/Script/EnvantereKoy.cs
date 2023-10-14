@@ -5,11 +5,23 @@ using UnityEngine;
 public class EnvantereKoy : MonoBehaviour
 {
     public GameObject Meyve;
+    private bool Area = false;
+    private void Update()
+    {
+        if (Area && Input.GetKey(KeyCode.E))
+        {
+            Meyve.SetActive(true);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Meyve"))
         {
-            Meyve.SetActive(true);
+            Area = true;
+        }
+        else
+        {
+            Area = false;
         }
     }
 }
