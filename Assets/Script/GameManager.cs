@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject verypast;
-    public GameObject past;
+    //public GameObject past;
     public GameObject future;
     public GameObject Menu;
     public GameObject Sound_Menu;
@@ -25,14 +25,14 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             verypast.SetActive(true);
-            past.SetActive(false);
+            //past.SetActive(false);
             future.SetActive(false);
         }
         #endregion
         #region world2
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            past.SetActive(true);
+          //  past.SetActive(true);
             verypast.SetActive(false);
             future.SetActive(false);
         }
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         #region world3
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            past.SetActive(false);
+           // past.SetActive(false);
             verypast.SetActive(false);
             future.SetActive(true);
         }
