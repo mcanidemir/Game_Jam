@@ -1345,6 +1345,7 @@ PolygonCollider2D:
       - {x: 37.06875, y: 3.09375}
       - {x: 36.899998, y: 2.8687499}
       - {x: 36.675, y: 1.8562499}
+      - {x: 36.641117, y: 1.4948043}
       - {x: 36.50625, y: 0.05625}
       - {x: 36.5625, y: -0.1125}
       - {x: 36, y: -0.78749996}
@@ -1352,7 +1353,7 @@ PolygonCollider2D:
       - {x: 34.81875, y: -2.25}
       - {x: 34.5375, y: -2.75625}
       - {x: 34.368748, y: -3.31875}
-      - {x: 34.46003, y: 1.1469291}
+      - {x: 34.13047, y: 1.1103117}
       - {x: 34.875, y: -4.10625}
       - {x: 35.38125, y: -4.0499997}
       - {x: 35.71875, y: -4.21875}
@@ -1730,6 +1731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 500
+  gameManager: {fileID: 0}
 --- !u!50 &713956473
 Rigidbody2D:
   serializedVersion: 4
@@ -1832,7 +1834,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 460
+  orthographic size: 450
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1857,7 +1859,7 @@ Transform:
   m_GameObject: {fileID: 718718961}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5267, y: 144.4, z: -70}
+  m_LocalPosition: {x: -2571, y: 74.00003, z: -79.63339}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1931,6 +1933,7 @@ MonoBehaviour:
   past: {fileID: 358777780}
   future: {fileID: 1910813607}
   Menu: {fileID: 1270621180}
+  MenuVisible: 0
 --- !u!4 &745577997
 Transform:
   m_ObjectHideFlags: 0
@@ -3437,7 +3440,7 @@ Transform:
   m_GameObject: {fileID: 2099629465}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1688, y: 12, z: 50}
+  m_LocalPosition: {x: -1444, y: 12, z: 50}
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
