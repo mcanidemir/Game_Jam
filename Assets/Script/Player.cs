@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     private Rigidbody2D _rigidbody;
     [SerializeField] private float _speed=3;
+    public GameManager gameManager;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -47,6 +48,11 @@ public class Player : MonoBehaviour
             _rigidbody.velocity = Vector2.up * 0;
         }
         #endregion
+
+        if(transform.position.y < -280)
+        {
+            Destroy(gameObject);
+        }
     }
     private void MoveRight()
     {

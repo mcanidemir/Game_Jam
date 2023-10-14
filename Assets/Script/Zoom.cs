@@ -42,7 +42,7 @@ public class Zoom : MonoBehaviour
     }
     public void CloseUp()
     {
-        far.m_Priority = 10;
+        far.m_Priority = 10;        
         close.m_Priority = 15;
     }
 }

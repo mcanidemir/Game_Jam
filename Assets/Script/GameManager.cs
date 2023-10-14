@@ -7,11 +7,8 @@ public class GameManager : MonoBehaviour
     public GameObject verypast;
     public GameObject past;
     public GameObject future;
-    public GameObject verypastfloor;
-    public GameObject pastfloor;
-    public GameObject futurefloor;
     public GameObject Menu;
-    private int MenuVisible = 0;
+    public int MenuVisible = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -28,9 +25,6 @@ public class GameManager : MonoBehaviour
             verypast.SetActive(true);
             past.SetActive(false);
             future.SetActive(false);
-            verypastfloor.SetActive(true);
-            pastfloor.SetActive(false);
-            futurefloor.SetActive(false);
         }
         #endregion
         #region world2
@@ -39,9 +33,6 @@ public class GameManager : MonoBehaviour
             past.SetActive(true);
             verypast.SetActive(false);
             future.SetActive(false);
-            verypastfloor.SetActive(false);
-            pastfloor.SetActive(true);
-            futurefloor.SetActive(false);
         }
         #endregion
         #region world3
@@ -50,9 +41,6 @@ public class GameManager : MonoBehaviour
             past.SetActive(false);
             verypast.SetActive(false);
             future.SetActive(true);
-            verypastfloor.SetActive(false);
-            pastfloor.SetActive(false);
-            futurefloor.SetActive(true);
         }
         #endregion
         ESCcount();
