@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public GameObject past;
     public GameObject future;
     public GameObject Menu;
+    public GameObject Sound_Menu;
+    public GameObject _player;
     public int MenuVisible = 0;
 
     // Start is called before the first frame update
@@ -48,10 +50,12 @@ public class GameManager : MonoBehaviour
         if (MenuVisible % 2 == 0)
         {
             Menu.SetActive(false);
+            _player.SetActive(true);
         }
         else
         {
             Menu.SetActive(true);
+            _player.SetActive(false);
         }
        
            
@@ -71,6 +75,16 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("CurrentTime");
+    }
+    public void SoundMenu()
+    {
+        Sound_Menu.SetActive(true);
+        MenuVisible += 1;
+    }
+    public void SoundMenuClose()
+    {
+        Sound_Menu.SetActive(false);
+        MenuVisible++;
     }
 
 }
