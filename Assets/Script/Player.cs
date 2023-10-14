@@ -4,30 +4,46 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float moveSpeed = 50.0f; // Adjust this to control the speed of movement.
+    public float speed;
+    public float jump;
 
-    private Rigidbody2D rb;
+    private float Move;
+
+    public Rigidbody2D rb;
+
+    public bool isJumping;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+            
     }
 
     private void Update()
     {
-        // Input for movement
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        Move = Input.GetAxis("Horizontal");
 
-        // Calculate movement direction
-        Vector2 movement = new Vector2(horizontalInput/2, verticalInput);
+        rb.velocity = new Vector2(speed * Move, rb.velocity.y);
 
-        // Normalize the movement vector to ensure constant speed in all directions
-        movement.Normalize();
+        if (Input.GetButtonDown("Jump") && isJumping == false)
+        {
+            rb.AddForce(new Vector2(rb.velocity.x, jump));
+        }
+    }
 
-        // Apply movement
-        rb.velocity = movement * moveSpeed;
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Floor")) 
+        {
+            isJumping = false;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            isJumping = true;
+        }
     }
 }
 
