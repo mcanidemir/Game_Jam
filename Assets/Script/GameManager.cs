@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject verypast;
-    //public GameObject past;
+    public GameObject past;
     public GameObject future;
     public GameObject Menu;
     public GameObject Sound_Menu;
     public GameObject _player;
+    public GameObject Dead;
     public int MenuVisible = 0;
 
     // Start is called before the first frame update
@@ -25,14 +26,14 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             verypast.SetActive(true);
-            //past.SetActive(false);
+            past.SetActive(false);
             future.SetActive(false);
         }
         #endregion
         #region world2
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-          //  past.SetActive(true);
+            past.SetActive(true);
             verypast.SetActive(false);
             future.SetActive(false);
         }
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour
         #region world3
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-           // past.SetActive(false);
+            past.SetActive(false);
             verypast.SetActive(false);
             future.SetActive(true);
         }
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
             Menu.SetActive(true);
             _player.SetActive(false);
         }
-       
+        Died();
            
     }
     public void ESCcount()
@@ -85,6 +86,14 @@ public class GameManager : MonoBehaviour
     {
         Sound_Menu.SetActive(false);
         MenuVisible++;
+    }
+    public void Died()
+    {
+        if (_player.transform.position.y < -350)
+        {
+            _player.SetActive(false);
+            Dead.SetActive(true);
+        }
     }
 
 }

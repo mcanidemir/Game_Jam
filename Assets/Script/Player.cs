@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
         {
             rb.AddForce(new Vector2(rb.velocity.x, jump));
         }
+
+        
     }
 
     private void OnCollisionEnter2D(Collision2D other)
