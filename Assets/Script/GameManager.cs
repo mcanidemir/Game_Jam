@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public GameObject Sound_Menu;
     public GameObject _player;
     public GameObject Dead;
+    public GameObject Tree;
+    public GameObject TreeWay;
+    public GameObject TreeWay2;
     public int MenuVisible = 0;
 
     // Start is called before the first frame update
@@ -59,7 +62,17 @@ public class GameManager : MonoBehaviour
             _player.SetActive(false);
         }
         Died();
-           
+
+        if (Tree.activeSelf)
+        {
+            TreeWay.SetActive(true);
+            TreeWay2.SetActive(true);
+        }
+        else if (!Tree.activeSelf)
+        {
+            TreeWay.SetActive(false);
+            TreeWay2.SetActive(false);
+        }
     }
     public void ESCcount()
     {

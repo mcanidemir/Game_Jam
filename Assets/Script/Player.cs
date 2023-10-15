@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     public bool isJumping;
 
-    public Animator animator;
+    //public Animator animator;
     private void Start()
     {
             
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     {
         Move = Input.GetAxis("Horizontal");
 
-        animator.SetFloat("Speed", Mathf.Abs(Move));
+        //animator.SetFloat("Speed", Mathf.Abs(Move));
         rb.velocity = new Vector2(speed * Move, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump") && isJumping == false)
